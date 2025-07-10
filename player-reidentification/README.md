@@ -1,55 +1,61 @@
-# Player Re-Identification in Sports Footage 🎯
+# 🏃‍♂️ Player Re-Identification in Sports Footage
 
-This project implements a computer vision system for tracking and re-identifying players in sports footage. The system can maintain consistent player IDs even when players temporarily leave the frame and return.
+This project implements a robust **computer vision system** for tracking and ***re-identifying players*** in sports videos. The system maintains consistent player IDs even when players **exit and re-enter** the frame—ensuring smooth and intelligent tracking throughout the video.
+
+> 📌 Built for sports analytics, player monitoring, and intelligent broadcasting use-cases.
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-- 🎯 **Player Detection** using YOLOv11
-- 🔁 **Player Tracking** across consecutive frames
-- 🧠 **Re-identification** after occlusions or re-entries
+- 🎯 **Real-Time Player Detection** using YOLOv11
+- 🔁 **Multi-Object Tracking** across consecutive video frames
+- 🧠 **Re-identification Module** handles occlusions and re-entries
 - 🎥 **Video Output** with annotated bounding boxes and player IDs
+- ⚡ Optional support for **CUDA GPU acceleration**
 
 ---
 
 ## 📁 Project Structure
 
-```
 player-reidentification/
-├── .vscode/
-│   └── settings.json              # VS Code workspace settings (optional)
+├── .vscode/ # Optional: VS Code workspace settings
+│ └── settings.json
 │
 ├── data/
-│   └── 15sec_input_720p.mp4       # Input video for testing
+│ └── 15sec_input_720p.mp4 # Input video
 │
 ├── models/
-│   └── yolov11_model.pt           # Pre-trained YOLOv11 model
+│ └── yolov11_model.pt # YOLOv11 pretrained model
 │
-├── main.py                        # Main script to run detection and tracking
-├── requirements.txt               # Python dependencies
-├── README.md                      # Project documentation
-└── .gitignore                     # Git ignored files and folders
-```
+├── main.py # Main script for detection & tracking
+├── requirements.txt # Python dependencies
+├── README.md # Project documentation
+└── .gitignore # Ignored files & folders
 
-> 🔥 Note: `output/` and `__pycache__/` directories are ignored via `.gitignore` and will be auto-generated during execution.
+yaml
+Copy
+Edit
+
+> 🗂️ Folders like `output/`, `__pycache__/`, and `.env/` are auto-generated and excluded via `.gitignore`.
 
 ---
 
-## ⚙️ Setup Instructions
+## ⚙️ Installation & Setup
 
-### 1. Prerequisites
+### 📌 **Prerequisites**
 
-- Python 3.8 or higher
-- pip (Python package manager)
-- Git (optional, for cloning)
+- **Python 3.8+**
+- **pip**
+- **Git** (optional)
+- **CUDA-compatible GPU** (optional, but recommended)
 
-### 2. Installation
+### 🧪 **Installation Steps**
 
 ```bash
 # Clone the repository
-git clone https://github.com/Rahuljoshi1216/player-reidentification.git
-cd player-reidentification
+git clone https://github.com/Rahuljoshi1216/reidentification-player.git
+cd reidentification-player
 
 # Create virtual environment
 python -m venv venv
@@ -62,69 +68,87 @@ source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
-```
+🎬 How to Run
+Place your input .mp4 video inside the data/ folder
 
----
+Place your YOLOv11 .pt model file inside the models/ folder
 
-## 🎬 Usage
+Then run:
 
-Place your input video and YOLOv11 model in the respective folders (`data/`, `models/`). Then run:
-
-```bash
+bash
+Copy
+Edit
 python main.py
-```
+The system will process the video and generate an annotated output video showing player IDs.
 
-This will process the video and output an annotated version with consistent player tracking.
+⚙️ Tracker Customization
+You can tweak the tracking and re-identification logic directly in main.py. For example:
 
----
-
-## 🛠️ Customization
-
-Modify the tracking logic or parameters inside `main.py` as needed:
-
-```python
+python
+Copy
+Edit
 tracker = PlayerTracker(
     max_disappeared_frames=30,
     distance_threshold=100,
     reidentification_threshold=80
 )
-```
+Adjust thresholds to suit your video resolution and movement dynamics.
+
+📦 Dependencies
+Core libraries used in this project:
+
+ultralytics — YOLOv11 detection
+
+opencv-python — video frame handling and drawing
+
+numpy — numerical operations
+
+torch, torchvision — PyTorch backend
+
+All are listed in requirements.txt.
+
+🧪 Troubleshooting & Tips
+Issue	Solution
+File not found (video/model)	Double-check file names & folder paths
+YOLO model too large	Consider using a smaller model or running with GPU
+Tracking inaccurate	Tweak distance_threshold or confidence filters in main.py
+Slow performance	Enable GPU (CUDA) and use a smaller video resolution
+
+🌐 Handling Large Files (YOLO model & Videos)
+To avoid pushing large .pt or .mp4 files to GitHub:
+
+Upload them to Google Drive
+
+Add a download link in a file like resources.txt or README.md
+
+📥 Example:
+bash
+Copy
+Edit
+📥 Download model:
+https://drive.google.com/file/d/YOLO_MODEL_ID/view?usp=sharing
+
+📥 Sample video:
+https://drive.google.com/file/d/VIDEO_ID/view?usp=sharing
+🔓 Make sure to set sharing to “Anyone with the link”
+
+📜 License
+This project is intended for educational and research purposes only.
+Ensure you have the legal rights to use and share any video inputs.
+
+📬 Contact & Contributions
+Got suggestions, bugs, or want to contribute?
+Feel free to open an issue or create a pull request.
+
+yaml
+Copy
+Edit
 
 ---
 
-## 📦 Dependencies
+Let me know if you want:
+- A polished `requirements.txt` file  
+- `.gitignore` tailored for Python  
+- Help creating the `resources.txt` file with Google Drive links
 
-- `ultralytics`
-- `opencv-python`
-- `numpy`
-- `torch`
-- `torchvision`
-
----
-
-## 🧪 Troubleshooting
-
-### Common Issues
-
-- **Video/Model Not Found**: Ensure files are in correct folders and names match
-- **Low Accuracy**: Tweak confidence and distance thresholds in tracker settings
-
----
-
-## 📌 Notes
-
-- Make sure to enable GPU (CUDA) if available for better performance
-- For large models or videos, monitor memory usage
-- Avoid committing large `.pt` or `.mp4` files unless necessary
-
----
-
-## 📜 License
-
-This project is for educational and research purposes only. Ensure you have rights to any input video used.
-
----
-
-## 📬 Contact
-
-For issues, suggestions, or contributions, feel free to open an issue or PR.
+Happy deploying! 🚀
