@@ -66,7 +66,7 @@ venv\Scripts\activate
 # macOS/Linux:
 source venv/bin/activate
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 🎬 How to Run
 Place your input .mp4 video inside the data/ folder
@@ -81,7 +81,7 @@ Edit
 python main.py
 The system will process the video and generate an annotated output video showing player IDs.
 
-⚙️ Tracker Customization
+###⚙️ Tracker Customization
 You can tweak the tracking and re-identification logic directly in main.py. For example:
 
 python
@@ -94,7 +94,7 @@ tracker = PlayerTracker(
 )
 Adjust thresholds to suit your video resolution and movement dynamics.
 
-📦 Dependencies
+###📦 Dependencies
 Core libraries used in this project:
 
 ultralytics — YOLOv11 detection
@@ -107,14 +107,14 @@ torch, torchvision — PyTorch backend
 
 All are listed in requirements.txt.
 
-🧪 Troubleshooting & Tips
+###🧪 Troubleshooting & Tips
 Issue	Solution
 File not found (video/model)	Double-check file names & folder paths
 YOLO model too large	Consider using a smaller model or running with GPU
 Tracking inaccurate	Tweak distance_threshold or confidence filters in main.py
 Slow performance	Enable GPU (CUDA) and use a smaller video resolution
 
-🌐 Handling Large Files (YOLO model & Videos)
+###🌐 Handling Large Files (YOLO model & Videos)
 To avoid pushing large .pt or .mp4 files to GitHub:
 
 Upload them to Google Drive
@@ -132,11 +132,11 @@ https://drive.google.com/file/d/YOLO_MODEL_ID/view?usp=sharing
 https://drive.google.com/file/d/VIDEO_ID/view?usp=sharing
 🔓 Make sure to set sharing to “Anyone with the link”
 
-📜 License
+###📜 License
 This project is intended for educational and research purposes only.
 Ensure you have the legal rights to use and share any video inputs.
 
-📬 Contact & Contributions
+###📬 Contact & Contributions
 Got suggestions, bugs, or want to contribute?
 Feel free to open an issue or create a pull request.
 
