@@ -1,0 +1,50 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions (if any)
+*.so
+
+# Virtual environments
+.Python
+venv/
+env/
+.venv/
+
+# Environment variables
+.env
+
+# Data files (raw inputs)
+data/*.mp4
+data/*.avi
+data/*.mov
+
+# Model weights
+models/*.pt
+models/*.pth
+models/*.weights
+
+# Output files and generated results
+output/
+*.csv
+*.log
+
+# IDE & Editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook checkpoints (optional)
+.ipynb_checkpoints/
+
+# pytest cache (optional)
+.pytest_cache/
+
+# mypy cache (optional)
+.mypy_cache/
