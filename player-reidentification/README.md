@@ -46,20 +46,20 @@ player-reidentification/
 ### 🧪 **Installation Steps**
 
 bash
-## Clone the repository
+### Clone the repository
 git clone https://github.com/Rahuljoshi1216/reidentification-player.git
 cd reidentification-player
 
-# Create virtual environment
+### Create virtual environment
 python -m venv venv
 
-# Activate virtual environment
-# Windows:
+### Activate virtual environment
+### Windows:
 venv\Scripts\activate
-# macOS/Linux:
+### macOS/Linux:
 source venv/bin/activate
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
 
