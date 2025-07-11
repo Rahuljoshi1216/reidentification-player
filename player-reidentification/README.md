@@ -45,8 +45,8 @@ player-reidentification/
 
 ### 🧪 **Installation Steps**
 
-`bash`
-# Clone the repository
+bash
+## Clone the repository
 git clone https://github.com/Rahuljoshi1216/reidentification-player.git
 cd reidentification-player
 
@@ -70,7 +70,7 @@ pip install -r requirements.txt
 2. Place your YOLOv11 `.pt` model file inside the `models/` folder  
 3. Then run:
 
-`bash`
+`bash
 python main.py
 
 
